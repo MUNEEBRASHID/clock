@@ -1,0 +1,20 @@
+from tkinter import *
+import time
+A1=Tk()
+A1.geometry("359x150+0+0")
+
+A1.configure(background="blue")
+A1.resizable(0,0)
+
+A1.overrideredirect(1)
+
+def start():
+    text=time.strftime("%I:%M:%S")
+    label.config(text=text)
+    label.after(200,start)
+    
+label=Label(A1,font=("calibiri", 50, "bold"),bg="black", fg="blue", bd=50)
+label.grid(row=0,column=0)
+start()
+print("done")
+A1.mainloop()
